@@ -4,7 +4,7 @@
 
 
 #启动调度器服务
-crond
+#crond
 
 
 nohup watch -n $uptetime_timer  /opt/updateTime.sh &

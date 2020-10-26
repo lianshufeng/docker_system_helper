@@ -22,8 +22,8 @@ services:
     privileged: true
     environment:
       - ntpd_host=cn.pool.ntp.org
-      - uptetime_timer=15
-      - freemem_timer=10
+      - uptetime_timer=1800
+      - freemem_timer=1800
     volumes:
       # docker api
       - "/var/run/docker.sock:/var/run/docker.sock"
@@ -50,8 +50,8 @@ services:
     privileged: true
     environment:
       - ntpd_host=cn.pool.ntp.org
-      - uptetime_timer=15
-      - freemem_timer=10
+      - uptetime_timer=1800
+      - freemem_timer=1800
     volumes:
       # docker api
       - "/var/run/docker.sock:/var/run/docker.sock"
