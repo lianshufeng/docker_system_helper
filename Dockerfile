@@ -10,7 +10,7 @@ ENV freemem_timer 1800
 
 
 RUN apk update \
-	&& apk add --no-cache --update curl  openntpd
+	&& apk add --no-cache --update curl openntpd jq
 
 
 #自动释放内存
@@ -23,6 +23,13 @@ RUN chmod -R 777 /opt/freemem.sh
 #自动同步系统时间
 COPY updateTime.sh /opt/updateTime.sh
 RUN chmod -R 777 /opt/updateTime.sh
+
+
+
+#拷贝命令
+COPY cmd /cmd
+WORKDIR /cmd
+
 
 
 #拷贝初始化文件
