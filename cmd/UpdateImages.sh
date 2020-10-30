@@ -4,7 +4,7 @@ fileName="/tmp/"$(cat /dev/urandom | tr -cd 'a-f0-9' | head -c 8)".sh"
 echo fileName :  $fileName
 
 #生成更新脚本
-curl --unix-socket /var/run/docker.sock http:/v1.40/images/json | jq '.[].RepoTags' | jq 'select(. != null )[]' | jq 'select(. != "<none>:<none>" )' >  $fileName
+curl --unix-socket /var/run/docker.sock http:/localhost/images/json | jq '.[].RepoTags' | jq 'select(. != null )[]' | jq -r 'select(. != "<none>:<none>" )' >  $fileName
 
 echo "docker pull image -> "
 
