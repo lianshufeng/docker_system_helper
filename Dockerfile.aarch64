@@ -1,4 +1,4 @@
-FROM --platform=linux/arm/v6 alpine:3
+FROM --platform=linux/arm64/v8 alpine:3
 COPY qemu-aarch64-static /usr/bin/
 
 
