@@ -6,7 +6,7 @@ services:
     build:
       context: ./
       dockerfile: Dockerfile
-    image: docker_systemhelper
+    image: lianshufeng/systemhelper
     privileged: true
     environment:
       - ntpd_host=cn.pool.ntp.org
@@ -19,7 +19,7 @@ services:
       - "/proc/sys/vm/drop_caches:/drop_caches"
       # log
       - "/var/log/systemhelper/:/var/log/"
-    container_name: docker_systemhelper
+    container_name: sh
     # update time auth
     cap_add:
       - SYS_TIME
