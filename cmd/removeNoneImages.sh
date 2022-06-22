@@ -4,7 +4,7 @@ fileName="/tmp/"$(cat /dev/urandom | tr -cd 'a-f0-9' | head -c 8)".sh"
 echo fileName :  $fileName
 
 #生成更新脚本
-curl --unix-socket /var/run/docker.sock http:/localhost/images/json  | jq .[] | jq 'select( .RepoTags[] == "<none>:<none>" )' | jq -r '.Id' >  $fileName
+curl --unix-socket /var/run/docker.sock http:/localhost/images/json  | jq .[] | jq 'select( .RepoTags == null )' | jq -r '.Id' >  $fileName
 
 echo "docker remove image -> "
 #打印所有镜像列表
