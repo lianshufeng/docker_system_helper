@@ -12,7 +12,7 @@ ENV freemem_timer 1800
 
 
 RUN apk update \
-	&& apk add --no-cache --update curl openntpd jq
+	&& apk add --no-cache --update curl openntpd jq chrony
 
 
 #自动释放内存
