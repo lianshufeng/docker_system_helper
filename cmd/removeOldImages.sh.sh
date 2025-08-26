@@ -1,3 +1,6 @@
+#!/bin/sh 
+
+
 curl --unix-socket /var/run/docker.sock http://localhost/images/json \
 | jq -r '.[].RepoTags[]' \
 | awk -F: '{print $1, $2}' \
